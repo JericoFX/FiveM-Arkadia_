@@ -6117,3 +6117,12 @@ resources/ServerPassword/client.lua
 resources/ServerPassword/server.lua
 resources/WeatherSnow/client.lua
 server.cfg
+*.db
+cache/files/esx_bus/resource.sfl
+cache/files/esx_firejob/resource.sfl
+cache/files/esx_gopostal/resource.sfl
+cache/files/esx_ranger/resource.sfl
+cache/files/esx_truckerjob/resource.sfl
+cache/files/outlawalert/resource.sfl
+cache/files/pointing/resource.sfl
+cache/files/weazel/resource.sfl
