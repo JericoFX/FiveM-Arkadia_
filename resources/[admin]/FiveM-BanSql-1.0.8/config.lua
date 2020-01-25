@@ -1,7 +1,7 @@
 Config                   = {}
 
 --GENERAL
-Config.Lang              = 'fr'    --Set lang (fr-en)
+Config.Lang              = 'en'    --Set lang (fr-en)
 Config.permission        = "mod" --Permission need to use FiveM-BanSql commands (mod-admin-superadmin)
 Config.MultiServerSync   = false   --This will check if a ban is add in the sql all 30 second, use it only if you have more then 1 server (true-false)
 

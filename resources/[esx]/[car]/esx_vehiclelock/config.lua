@@ -5,7 +5,7 @@ Config.Size         = {x = 1.5, y = 1.5, z = 1.5}
 Config.Color        = {r = 0, g = 128, b = 255}
 Config.Type         = 27
 Config.coef         = 0.10
-Config.Locale = 'fr'
+Config.Locale = 'en'
 
 --[[
 Config.Zones = {
