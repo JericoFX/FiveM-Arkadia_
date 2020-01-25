@@ -5,7 +5,7 @@ Config.EnablePlayerManagement     = true
 Config.EnableSocietyOwnedVehicles = false
 Config.EnableLicenses             = true
 Config.EnableESXIdentity          = true
-Config.Locale = 'fr'
+Config.Locale = 'en'
 
 Config.Cig = {
   'malbora',

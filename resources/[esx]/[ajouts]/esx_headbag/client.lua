@@ -14,14 +14,14 @@ local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 local player = GetPlayerPed(-1)
 
 if closestPlayer == -1 or closestDistance > 2.0 then 
-    ESX.ShowNotification('~r~Pas de joueur à proximité')
+    ESX.ShowNotification('~r~ningun jugador cerca')
 else
   if not HaveBagOnHead then
     TriggerServerEvent('esx_worek:sendclosest', GetPlayerServerId(closestPlayer))
-    ESX.ShowNotification('~g~Vous mettez une cagoule à ~w~' .. GetPlayerName(closestPlayer))
+    ESX.ShowNotification('~g~Te pones una capucha ~w~' .. GetPlayerName(closestPlayer))
     TriggerServerEvent('esx_worek:closest')
   else
-    ESX.ShowNotification('~r~Ce joueur à déjà une cagoule sur la tête')
+    ESX.ShowNotification('~r~Este jugador ya tiene una capucha en la cabeza')
   end
 end
 
@@ -51,7 +51,7 @@ end)
 
 RegisterNetEvent('esx_worek:zdejmijc') --This event delete head bag from player head
 AddEventHandler('esx_worek:zdejmijc', function(gracz)
-    ESX.ShowNotification('~g~Quelqu\'un vous à enlevé la cagoule!')
+    ESX.ShowNotification('~g~Alguien se quito la capucha!')
     DeleteEntity(Worek)
     SetEntityAsNoLongerNeeded(Worek)
     SendNUIMessage({type = 'closeAll'})
@@ -61,8 +61,8 @@ end)
 function OpenBagMenu() --This function is menu function
 
     local elements = {
-          {label = 'Mettre la cagoule sur la tête', value = 'puton'},
-          {label = 'Enlevé la cagoule', value = 'putoff'},
+          {label = 'Ponte la capucha en la cabeza', value = 'puton'},
+          {label = 'Se quito la capucha', value = 'putoff'},
           
         }
   
@@ -71,7 +71,7 @@ function OpenBagMenu() --This function is menu function
     ESX.UI.Menu.Open(
       'default', GetCurrentResourceName(), 'headbagging',
       {
-        title    = 'Cagoule menu',
+        title    = 'Menu de Campana',
         align    = 'right',
         elements = elements
         },
@@ -91,7 +91,7 @@ function OpenBagMenu() --This function is menu function
                   TriggerServerEvent('esx_worek:zdejmij')
                 end
               else
-                ESX.ShowNotification('~r~Pas de joueur à proximité.')
+                ESX.ShowNotification('~r~Ningun Jugador Cerca')
               end
             end,
       function(data2, menu2)

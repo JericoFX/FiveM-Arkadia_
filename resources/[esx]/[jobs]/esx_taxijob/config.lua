@@ -4,7 +4,7 @@ Config.NPCJobEarnings             = {min = 650, max = 800}
 Config.MaxInService               = -1
 Config.EnablePlayerManagement     = true
 Config.EnableSocietyOwnedVehicles = false
-Config.Locale = 'fr'
+Config.Locale = 'en'
 
 Config.AuthorizedVehicles = {
 

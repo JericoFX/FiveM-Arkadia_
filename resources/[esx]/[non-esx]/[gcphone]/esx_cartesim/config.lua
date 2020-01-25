@@ -5,4 +5,4 @@ Config.MarkerColor            = {r = 255, g = 0, b = 0}
 Config.RoomMenuMarkerColor    = {r = 255, g = 0, b = 0}
 Config.MarkerType             = 25
 Config.Zones                  = {x = -230.46, y = -957.23, z = 31.22}
-Config.Locale                 = 'fr'
+Config.Locale                 = 'en'

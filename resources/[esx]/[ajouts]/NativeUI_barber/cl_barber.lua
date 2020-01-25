@@ -205,9 +205,9 @@ function MakeupMenuFct(menu)
 	
 	}
 	local makeupSelect = NativeUI.CreateListItem("Maquillage", ppp, 0)
-	local makeupBaseColor = NativeUI.CreateColourPanel("Couleur du maquillage", Colors)
-	local makeupHighColor = NativeUI.CreateColourPanel("Seconde couleur du maquillage", Colors)
-		local makeupOpacity = NativeUI.CreatePercentagePanel("0%", "Opacity du maquillage", "100%")
+	local makeupBaseColor = NativeUI.CreateColourPanel("Color del maquillaje", Colors)
+	local makeupHighColor = NativeUI.CreateColourPanel("Color secundario", Colors)
+		local makeupOpacity = NativeUI.CreatePercentagePanel("0%", "opacidad", "100%")
 
 		makeupSelect:AddPanel(makeupOpacity)
         makeupSelect:AddPanel(makeupBaseColor)
@@ -215,7 +215,7 @@ function MakeupMenuFct(menu)
         makeupOpacity:Percentage(0.0)
 		menu:AddItem(makeupSelect)
 		pp = {}
-		djkq = NativeUI.CreateItem("~g~Valider","")
+		djkq = NativeUI.CreateItem("~g~Validar","")
 		djkq:RightLabel("50$")
 		menu:AddItem(djkq)
         makeupSelect.OnListChanged = function(_, SelectedItem, Index)
@@ -240,11 +240,11 @@ function MakeupMenuFct(menu)
 						skin.makeup_3 = pp[3]
 						skin.makeup_4 = pp[4]
 						TriggerServerEvent('esx_skin:save', skin)
-						ESX.ShowNotification("~g~Nouveau maquillage acheté 50$")
+						ESX.ShowNotification("~g~Nuevo maquillaje comprado 50$")
 					end)
 	   
 				else
-					ESX.ShowNotification("~r~Pas assez d'argent")
+					ESX.ShowNotification("~r~Sin Dinero")
 				end
 			end)
 		end

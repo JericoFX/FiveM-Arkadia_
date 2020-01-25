@@ -7,7 +7,7 @@ Config.EnableSocietyOwnedVehicles = false
 Config.EnableHelicopters          = false
 Config.EnableMoneyWash            = true
 Config.MaxInService               = -1
-Config.Locale                     = 'fr'
+Config.Locale                     = 'en'
 
 Config.AuthorizedVehicles = {
 	{ name = 'rumpo',  label = 'Van Los Santos Informer' },

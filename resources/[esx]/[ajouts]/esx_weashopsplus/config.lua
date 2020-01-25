@@ -3,7 +3,7 @@ Config.DrawDistance   = 100
 Config.Size           = { x = 1.5, y = 1.5, z = 1.5 }
 Config.Color          = { r = 0, g = 128, b = 255 }
 Config.Type           = 27
-Config.Locale = 'fr'
+Config.Locale = 'en'
 Config.EnableLicense  = true
 Config.LicensePrice   = 5000
 
@@ -12,7 +12,7 @@ Config.Zones = {
     GunShop = {
         legal = 0,
         Items = {
-			{name  = "WEAPON_FLASHLIGHT", price = 1000, label = "Lampe Torche"},
+			{name  = "WEAPON_FLASHLIGHT", price = 1000, label = "lampara"},
 			{name  = "WEAPON_HAMMER", price = 1500, label = "Marteau"},
 			{name  = "WEAPON_CROWBAR", price = 3000, label = "Pied de biche"},
 			{name  = "WEAPON_HATCHET", price = 4000, label = "Hache"},

@@ -53,7 +53,7 @@ end)
 
 RegisterNetEvent("Fax:ServerPassword:ShowPasswordPrompt")
 AddEventHandler("Fax:ServerPassword:ShowPasswordPrompt", function()
-    local password = KeyboardInput("https://discord.gg/qHhHH4S #mot-de-passe (" .. attempts .. " tentative" .. (attempts == 1 and "" or "s") .. " restant)", "", 30)
+    local password = KeyboardInput("Escribe la contraseña (" .. attempts .. " tentative" .. (attempts == 1 and "" or "s") .. " restant)", "", 30)
     attempts = attempts - 1
     TriggerServerEvent("Fax:ServerPassword:CheckPassword", password, attempts)
 end)
