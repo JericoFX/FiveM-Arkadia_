@@ -1,6 +1,6 @@
-ESX.Trace = function(str)
+ESX.Trace = function(msg)
 	if Config.EnableDebug then
-		print('ESX> ' .. str)
+		print(('[es_extended] [^2TRACE^7] %s^7'):format(msg))
 	end
 end
 
@@ -30,60 +30,56 @@ end
 
 ESX.TriggerServerCallback = function(name, requestId, source, cb, ...)
 	if ESX.ServerCallbacks[name] ~= nil then
-	   ESX.ServerCallbacks[name](source, cb, ...)
+		ESX.ServerCallbacks[name](source, cb, ...)
 	else
-		print('es_extended: TriggerServerCallback => [' .. name .. '] does not exist')
+		print(('[es_extended] [^3WARNING^7] Server callback "%s" does not exist. Make sure that the server sided file really is loading, an error in that file might cause it to not load.'):format(name))
 	end
 end
 
 ESX.SavePlayer = function(xPlayer, cb)
 	local asyncTasks = {}
-	xPlayer.setLastPosition(xPlayer.getCoords())
 
 	-- User accounts
-	for i=1, #xPlayer.accounts, 1 do
-		if ESX.LastPlayerData[xPlayer.source].accounts[xPlayer.accounts[i].name] ~= xPlayer.accounts[i].money then
+	for k,v in ipairs(xPlayer.accounts) do
+		if ESX.LastPlayerData[xPlayer.source].accounts[v.name] ~= v.money then
 			table.insert(asyncTasks, function(cb)
-				MySQL.Async.execute('UPDATE user_accounts SET `money` = @money WHERE identifier = @identifier AND name = @name', {
-					['@money']      = xPlayer.accounts[i].money,
+				MySQL.Async.execute('UPDATE user_accounts SET money = @money WHERE identifier = @identifier AND name = @name', {
+					['@money']      = v.money,
 					['@identifier'] = xPlayer.identifier,
-					['@name']       = xPlayer.accounts[i].name
+					['@name']       = v.name
 				}, function(rowsChanged)
 					cb()
 				end)
 			end)
 
-			ESX.LastPlayerData[xPlayer.source].accounts[xPlayer.accounts[i].name] = xPlayer.accounts[i].money
+			ESX.LastPlayerData[xPlayer.source].accounts[v.name] = v.money
 		end
 	end
 
 	-- Inventory items
-	for i=1, #xPlayer.inventory, 1 do
-		if ESX.LastPlayerData[xPlayer.source].items[xPlayer.inventory[i].name] ~= xPlayer.inventory[i].count then
+	for k,v in ipairs(xPlayer.inventory) do
+		if ESX.LastPlayerData[xPlayer.source].items[v.name] ~= v.count then
 			table.insert(asyncTasks, function(cb)
-				MySQL.Async.execute('UPDATE user_inventory SET `count` = @count WHERE identifier = @identifier AND item = @item', {
-					['@count']      = xPlayer.inventory[i].count,
+				MySQL.Async.execute('UPDATE user_inventory SET count = @count WHERE identifier = @identifier AND item = @item', {
+					['@count']      = v.count,
 					['@identifier'] = xPlayer.identifier,
-					['@item']       = xPlayer.inventory[i].name
+					['@item']       = v.name
 				}, function(rowsChanged)
 					cb()
 				end)
 			end)
 
-			ESX.LastPlayerData[xPlayer.source].items[xPlayer.inventory[i].name] = xPlayer.inventory[i].count
+			ESX.LastPlayerData[xPlayer.source].items[v.name] = v.count
 		end
 	end
 
-    --- SECONDJOB INCLUDED
 	-- Job, loadout and position
 	table.insert(asyncTasks, function(cb)
-		MySQL.Async.execute('UPDATE users SET `job` = @job, `job2` = @job2, `job_grade` = @job_grade, `job2_grade` = @job2_grade, `loadout` = @loadout, `position` = @position WHERE identifier = @identifier', {
+		MySQL.Async.execute('UPDATE users SET job = @job, job_grade = @job_grade, loadout = @loadout, position = @position WHERE identifier = @identifier', {
 			['@job']        = xPlayer.job.name,
-			['@job2']       = xPlayer.job2.name,
 			['@job_grade']  = xPlayer.job.grade,
-			['@job2_grade']  = xPlayer.job2.grade,
 			['@loadout']    = json.encode(xPlayer.getLoadout()),
-			['@position']   = json.encode(xPlayer.getLastPosition()),
+			['@position']   = json.encode(xPlayer.getCoords()),
 			['@identifier'] = xPlayer.identifier
 		}, function(rowsChanged)
 			cb()
@@ -91,7 +87,7 @@ ESX.SavePlayer = function(xPlayer, cb)
 	end)
 
 	Async.parallel(asyncTasks, function(results)
-		RconPrint('[SAUVEGARDE] ' .. xPlayer.name .. "^7\n")
+		print(('[es_extended] [^2INFO^7] Saved player "%s^7"'):format(xPlayer.getName()))
 
 		if cb ~= nil then
 			cb()
@@ -107,13 +103,11 @@ ESX.SavePlayers = function(cb)
 		table.insert(asyncTasks, function(cb)
 			local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
 			ESX.SavePlayer(xPlayer, cb)
-			TriggerClientEvent('esx:showColoredNotification', xPlayer.source, "~o~Synchronisation ~w~de votre ~o~personnage.", 17)
 		end)
 	end
 
 	Async.parallelLimit(asyncTasks, 8, function(results)
-		RconPrint('[SAVED] SAUVEGARDE TOUT LES JOUEURS' .. "\n")
-
+		print(('[es_extended] [^2INFO^7] Saved %s player(s)'):format(#xPlayers))
 		if cb ~= nil then
 			cb()
 		end
@@ -138,7 +132,6 @@ ESX.GetPlayers = function()
 
 	return sources
 end
-
 
 ESX.GetPlayerFromId = function(source)
 	return ESX.Players[tonumber(source)]
@@ -166,16 +159,23 @@ ESX.GetItemLabel = function(item)
 	end
 end
 
-ESX.CreatePickup = function(type, name, count, label, player)
+ESX.CreatePickup = function(type, name, count, label, playerId, components)
 	local pickupId = (ESX.PickupId == 65635 and 0 or ESX.PickupId + 1)
+	local xPlayer = ESX.GetPlayerFromId(playerId)
 
 	ESX.Pickups[pickupId] = {
 		type  = type,
 		name  = name,
-		count = count
+		count = count,
+		label = label,
+		coords = xPlayer.getCoords(),
 	}
 
-	TriggerClientEvent('esx:pickup', -1, pickupId, label, player)
+	if type == 'item_weapon' then
+		ESX.Pickups[pickupId].components = components
+	end
+
+	TriggerClientEvent('esx:createPickup', -1, pickupId, label, playerId, type, name, components)
 	ESX.PickupId = pickupId
 end
 
@@ -184,18 +184,6 @@ ESX.DoesJobExist = function(job, grade)
 
 	if job and grade then
 		if ESX.Jobs[job] and ESX.Jobs[job].grades[grade] then
-			return true
-		end
-	end
-
-	return false
-end
-
-ESX.DoesJob2Exist = function(job2, grade2)
-	grade2 = tostring(grade2)
-
-	if job2 and grade2 then
-		if ESX.Jobs[job2] and ESX.Jobs[job2].grades[grade2] then
 			return true
 		end
 	end
