@@ -7,6 +7,6 @@ Config.MarkerType             = 27
 Config.Zones                  = {}
 Config.Properties             = {}
 Config.EnablePlayerManagement = true -- If set to true you need esx_realestateagentjob
-Config.Locale                 = 'fr'
+Config.Locale                 = 'en'
 
 Config.Properties             = {}
