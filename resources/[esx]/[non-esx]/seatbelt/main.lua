@@ -68,7 +68,7 @@ TaskPlayAnim(GetPlayerPed(-1),"oddjobs@taxi@cyi", "std_hand_off_ps_passenger", 8
 end)
         beltOn = not beltOn 
         if beltOn then 
-      TriggerEvent("seatbelt:notify", "Ceinture de sécurité ~g~Attachée")
+      TriggerEvent("seatbelt:notify", "~g~Colocaste el Cinto ")
 		  TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 0.5, 'buckle', 0.2)
 			
 		  SendNUIMessage({
@@ -76,8 +76,12 @@ end)
 		    })
 		  isUiOpen = true 
 		else 
-      TriggerEvent("seatbelt:notify", "Ceinture de sécurité ~r~Détachée")
-		  TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 0.5, 'unbuckle', 0.2)
+      TriggerEvent("seatbelt:notify", "Te Sacaste el Cinto ~r~Détachée")
+		  
+		  if !IsPedInAnyVehicle(PlayerPedId(), false) then
+			print('No estas en el auto')
+			TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 0.5, 'unbuckle', 0.2)
+		end 
 
 		  SendNUIMessage({
 		     displayWindow = 'true'
