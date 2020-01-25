@@ -6,7 +6,7 @@ ConfigBarber.DrawDistance = 15.0
 ConfigBarber.MarkerSize   = {x = 1.5, y = 1.5, z = 1.0}
 ConfigBarber.MarkerColor  = {r = 250, g = 100, b = 100}
 ConfigBarber.MarkerType   = 1
-ConfigBarber.Locale = 'fr'
+ConfigBarber.Locale = 'es'
 
 ConfigBarber.Zones = {}
 
