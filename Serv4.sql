@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `addon_account` (
   `name` varchar(60) COLLATE utf8mb4_bin NOT NULL,
   `label` varchar(255) COLLATE utf8mb4_bin NOT NULL,
   `shared` int(11) NOT NULL,
-  PRIMARY KEY (`name`)
+  PRIMARY KEY (`name`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Volcando datos para la tabla Serv4.addon_account: ~39 rows (aproximadamente)
