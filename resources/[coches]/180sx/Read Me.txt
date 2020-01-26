@@ -1,0 +1,86 @@
+Bugs: 
+-Weird tire bursting
+-If there are more please let me know.
+
+Unfixable Bugs:
+-Interior buttons may appear differently due to ENB's.
+
+Things to know:
+-Some exhausts are placed differently to accomodate for the bumpers 
+with different exhaust exits. Ruins consistency but allows for a 
+better appearance.
+-Sometimes the car may fail to spawn on first install. A simple
+restart is a possible solution to this and has worked on 
+multiple systems.
+
+*gameconfig.xml is only for those who have an unmodified .xml file.
+It supports the latest patch as of now (Bikers DLC)
+If you already have a modified gameconfig disregard the included 
+file.
+
+Installation: 
+
+DO NOT INSTALL the dlc.rpf STRAIGHT FROM WINRAR INTO OpenIV.
+This may corrupt the dlc.rpf and crash your game on startup.
+Extract dlc.rpf onto desktop and THEN import in openiv. Once
+imported into OpenIV, wait, then open the dlc.rpf to make sure 
+it's working. 
+
+====================================================================
+
+Import this line into dlclist.xml in:
+(GTAV\mods\update\update.rpf\common\data)
+
+		<Item>dlcpacks:\180sx\</Item>
+
+
+Finally, go to C:\Program Files (GTAV\mods\update\x64\dlcpacks)
+and create a folder named 180sx and drop dlc.rpf inside.
+
+Features:
+-Vanilla Car Features
+-Correct Window Tinting
+-Burnt area
+-Window Templates (kmracing99)
+-Safety Cage (Interior doesnt deform)
+-3D Vibrating Engines and ALL Exhausts
+-Fully Working Pop-Ups (Scoop)
+-HQ Interior w/ Bumpmapping
+-HQ Reflective Mirrors That Fall Off (Idea by: Gta5KoRn)
+-HQ Custom Doorsills w/ Hinges
+-HQ Trunk and Bonnet
+-Custom Names for ALL Tuning Parts
+
+Tuning: 
+-17 Front Bumpers
+-13 Rear Bumpers
+-17 Spoilers
+-12 Skirts
+-14 Exhausts
+-5 Rollcages
+-5 Bonnets
+-3 Roof Spoilers
+-8 Front Fenders
+-9 Rear Fenders
+-16 Strut Braces (Last 2 are Dashboard Color)
+-12 Air Fresheners
+-3 Extras
+-8 Headlights (LEDS by Wiik/Danny)
+-RB26 Swap (Trim Design Color)
+-2 Hydro Handbrakes
+-1 Set Of Rear Vents
+-2 Nardi Steering Wheels From Order Star
+-3 Shifters
+-8 Seats
+-Cambered Version
+
+Enjoy.
+
+Changelog: 
+1.05 - Reduced file size
+1.1 Redone center of mass. Filled door sill and rear gaps. 
+Added directions on application of stickers.
+1.2 Added Spirit Rei kit, one set of rear fenders, and another 
+strutbar. Changed engine sound to Elegy Retro. Added two new 
+air fresheners: (Wakaba) Japan and Philippines.
+1.2b Reuploaded to replace broken link. Sorry!

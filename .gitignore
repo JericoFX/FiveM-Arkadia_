@@ -6127,3 +6127,11 @@ cache/files/outlawalert/resource.sfl
 cache/files/pointing/resource.sfl
 cache/files/weazel/resource.sfl
 *.sfl
+*.yft
+*.ydr
+*.ydr
+*.ytyp
+*.ymap
+*.ybn
+*.ytd
+*.meta

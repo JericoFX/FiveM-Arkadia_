@@ -1,0 +1,10 @@
+RegisterServerEvent('ZoneActivated')
+AddEventHandler('ZoneActivated', function(message, speed, radius, x, y, z)
+    TriggerClientEvent('chatMessage', -1, message)
+    TriggerClientEvent('Zone', -1, speed, radius, x, y, z)
+end)
+
+RegisterServerEvent('Disable')
+AddEventHandler('Disable', function(blip)
+    TriggerClientEvent('RemoveBlip', -1)
+end)

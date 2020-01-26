@@ -1,0 +1,73 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Versión del servidor:         10.1.38-MariaDB - mariadb.org binary distribution
+-- SO del servidor:              Win64
+-- HeidiSQL Versión:             10.1.0.5464
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- Volcando datos para la tabla essentialmode.fine_types: ~52 rows (aproximadamente)
+/*!40000 ALTER TABLE `fine_types` DISABLE KEYS */;
+REPLACE INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
+	(1, 'Uso excesivo de la bocina', 30, 0),
+	(2, 'Cruzar linea continua', 40, 0),
+	(3, 'Circular en sentido contrario', 250, 0),
+	(4, 'Giro Indevido', 250, 0),
+	(5, 'Circular por fuera de la carretera', 170, 0),
+	(6, 'Incumplimiento de las distancias de seguridad.', 30, 0),
+	(7, 'Parada peligrosa / prohibida', 150, 0),
+	(8, 'Estacionamiento peligroso / prohibido', 70, 0),
+	(9, 'No respetar la prioridad a la derecha.', 70, 0),
+	(10, 'No dar prioridad', 90, 0),
+	(11, 'Saltarse un Stop', 105, 0),
+	(12, 'Incumplimiento de una luz roja.', 130, 0),
+	(13, 'Adelantamientos peligrosos', 100, 0),
+	(14, 'Vehículo en mal estado', 100, 0),
+	(15, 'Conducir sin licencia', 1500, 0),
+	(16, 'Chocar y escaparse', 800, 0),
+	(17, 'Exceso de velocidad <5 km / h', 90, 0),
+	(18, 'Exceso de velocidad 5-15 kmh', 120, 0),
+	(19, 'Exceso de velocidad 15-30 km / h', 180, 0),
+	(20, 'Exceso de velocidad> 30 km / h', 300, 0),
+	(21, 'Obstruccion del trafico', 110, 1),
+	(22, 'Escandalo publico', 90, 1),
+	(23, 'Problemas con el orden público.', 90, 1),
+	(24, 'Obstruir a la policia', 130, 1),
+	(25, 'Insulto a / entre civiles', 75, 1),
+	(26, 'Indignación al oficial de policía', 110, 1),
+	(27, '\r\nAmenaza verbal o intimidación hacia lo civil.', 90, 1),
+	(28, 'Amenaza verbal o intimidación de un oficial de policía', 150, 1),
+	(29, 'Protesta ilegal', 250, 1),
+	(30, 'Intento de soborno', 1500, 1),
+	(31, 'Enseñar arma blanca en la ciudad', 120, 2),
+	(32, 'Enseñar arma de fuego en la ciudad', 300, 2),
+	(33, 'No tener licencia de armas', 600, 2),
+	(34, 'Portar un arma ilegal', 700, 2),
+	(35, 'Forzar una cerradura', 300, 2),
+	(36, 'Coche robado', 1800, 2),
+	(37, 'Venta de drogas', 1500, 2),
+	(38, 'Fabricacion de drogas', 1500, 2),
+	(39, 'Posesion de drogas', 650, 2),
+	(40, 'Cojer a un civil de rehen', 1500, 2),
+	(41, 'Tomar de rehen a un agente de la policia', 2000, 2),
+	(42, 'Special deflection', 650, 2),
+	(43, 'Blanqueo de dinero', 650, 2),
+	(44, 'Robo de banco', 1500, 2),
+	(45, 'Disparar a un civil', 2000, 3),
+	(46, 'Disparar a un policia', 2500, 3),
+	(47, 'Intento de asesinato a un civil', 3000, 3),
+	(48, 'Intento de asesinato a un policia', 5000, 3),
+	(49, 'Asesinato de un civil', 10000, 3),
+	(50, 'Asesinato de un policia', 30000, 3),
+	(51, 'Asesinato involuntario', 1800, 3),
+	(52, 'Estafa de negocios', 2000, 2);
+/*!40000 ALTER TABLE `fine_types` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
