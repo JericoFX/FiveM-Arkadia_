@@ -1,29 +1,29 @@
 Locales['fr'] = {
 	-- Cloakroom
-	['cloakroom'] = 'Vestiaire',
-	['citizen_wear'] = 'Tenue civile',
-	['journaliste_outfit'] = 'Tenue de stagiaire',
-	['journaliste_outfit_1'] = 'Tenue de reporter',
-	['journaliste_outfit_2'] = 'Tenue d\'enquêteur',
-	['journaliste_outfit_3'] = 'Tenue de directeur', 
-    ['no_outfit'] = 'Il n\'y a pas d\'uniforme à votre taille...',
-    ['open_cloackroom'] = 'Appuyez sur ~INPUT_CONTEXT~ pour vous changer',
+	['cloakroom'] = 'Vestidor',
+	['citizen_wear'] = 'Vestimenta de Civil',
+	['journaliste_outfit'] = 'Vestimenta de Reportero 1',
+	['journaliste_outfit_1'] = 'Vestimenta de Reportero 2',
+	['journaliste_outfit_2'] = 'Vestimenta de Supervisor',
+	['journaliste_outfit_3'] = 'Vestimenta de Director Jefe', 
+    ['no_outfit'] = 'No tienes uniforme...',
+    ['open_cloackroom'] = 'Preciona ~INPUT_CONTEXT~ para cambiarte',
 	
 	-- Vehicles  
-    ['vehicle_menu']             = 'Véhicule',
-    ['vehicle_out']              = 'Il y a déja un véhicule dehors',
-    ['vehicle_spawner']          = 'Appuyez sur ~INPUT_CONTEXT~ pour sortir un véhicule',
-    ['store_vehicle']            = 'Appuyez sur ~INPUT_CONTEXT~ pour ranger le véhicule',
-    ['service_max']              = 'Service complet : ',
-    ['spawn_point_busy']         = 'Un véhicule occupe le point de sortie',
+    ['vehicle_menu']             = 'Vehiculo',
+    ['vehicle_out']              = 'Il y a déja un Vehiculo dehors',
+    ['vehicle_spawner']          = 'Preciona ~INPUT_CONTEXT~ para subirte al vehiculo',
+    ['store_vehicle']            = 'Preciona ~INPUT_CONTEXT~ para guardar Vehiculo',
+    ['service_max']              = 'Servicio Completo : ',
+    ['spawn_point_busy']         = 'Un vehiculo obstaculisa el punto de spawm',
 	
 	-- Boss Menu
-	['deposit_society'] = 'déposer argent',
-	['withdraw_society'] = 'retirer argent société',
-	['boss_actions'] = 'action Patron',
+	['deposit_society'] = 'Depositar dinero',
+	['withdraw_society'] = 'Lavar Dinero ',
+	['boss_actions'] = 'Accion de Jefe',
 	-- Misc
-	['invalid_amount'] = '~r~montant invalide',
-	['open_menu'] = 'appuyez sur ~INPUT_CONTEXT~ pour ouvrir le menu',
+	['invalid_amount'] = '~r~Monto Invalido',
+	['open_menu'] = 'Preciona ~INPUT_CONTEXT~ para abrir el menu',
 	['deposit_amount'] = 'montant du dépôt',
 	['money_withdraw'] = 'montant du retrait',
  
@@ -38,8 +38,8 @@ Locales['fr'] = {
     ['open_vault']               = 'Appuyez sur ~INPUT_CONTEXT~ pour accéder au coffre',
 
     -- Boss Menu  
-    ['take_company_money']       = 'Retirer argent société',
-    ['deposit_money']            = 'Déposer argent',
+    ['take_company_money']       = 'Retirar Dinero de la compania',
+    ['deposit_money']            = 'Depositar',
     ['amount_of_withdrawal']     = 'Montant du retrait',
     ['invalid_amount']           = 'Montant invalide',
     ['amount_of_deposit']        = 'Montant du dépôt',
@@ -55,8 +55,8 @@ Locales['fr'] = {
     ['map_blip']                 = 'Los Santos Informer',
 
     -- Billing Menu  
-    ['billing']                  = 'Facture',
-    ['no_players_nearby']        = 'Aucun joueur à proximité',
+    ['billing']                  = 'Factura',
+    ['no_players_nearby']        = 'No hay jugadores cerca',
     ['billing_amount']           = 'Montant de la facture',
     ['amount_invalid']           = 'Montant invalide',
     
